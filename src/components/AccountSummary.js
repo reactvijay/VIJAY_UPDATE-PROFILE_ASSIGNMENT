@@ -47,8 +47,8 @@ class AccountSummary extends Component {
                             <div className="star">&nbsp;</div>
 
                             <div className="table-value added-value">
-                             <span title="unknown" id="added" name="added" className="label-field input">{accountSummaryInfo.added}</span>                    
-                                {/* <span id="added" name="added" className=" label-field input">{new Date(accountSummaryInfo.added).toString()}</span> */}
+                                <span title="unknown" id="added" name="added" className="label-field input">{accountSummaryInfo.added}</span>
+
                             </div>
 
                             <div className="clear"></div>
@@ -65,8 +65,8 @@ class AccountSummary extends Component {
                             <div className="star">&nbsp;</div>
 
                             <div className="table-value last-login-value">
-        <span title="unknown" id="lastLogin" name="lastLogin" className="label-field input">{accountSummaryInfo.lastLogin}</span>                    
-                                {/* <span id="last-login" name="last_login" className=" label-field input">{accountSummaryInfo.lastLogin}</span> */}
+                                <span title="unknown" id="lastLogin" name="lastLogin" className="label-field input">{accountSummaryInfo.lastLogin}</span>
+
                             </div>
 
                             <div className="clear"></div>
@@ -83,8 +83,7 @@ class AccountSummary extends Component {
                             <div className="star">&nbsp;</div>
 
                             <div className="table-value language-value">
-<span title="unknown" id="language" name="language" className="label-field input">{accountSummaryInfo.language}</span>                    
-                                {/* <span id="language" name="language" className=" label-field input">{accountSummaryInfo.language}</span> */}
+                                <span title="unknown" id="language" name="language" className="label-field input">{accountSummaryInfo.language}</span>
                             </div>
 
                             <div className="clear"></div>
@@ -101,9 +100,7 @@ class AccountSummary extends Component {
                             <div className="star">&nbsp;</div>
 
                             <div className="table-value orders-count-value">
-                             <span title="unknown" id="ordersCount" name="ordersCount" className="label-field input">{accountSummaryInfo.orderCount}</span>
-                                {/* <span id="orders-count" name="orders_count" className=" label-field input">
-                                    <a href="admin.php?target=order_list&amp;action=searchByCustomer&amp;profileId=1&amp;xcart_form_id=LYmiTFxsrB1jmnQfXXt8HrGTWTe4git8">{accountSummaryInfo.ordersCount}</a></span> */}
+                                <span title="unknown" id="ordersCount" name="ordersCount" className="label-field input">{accountSummaryInfo.orderCount}</span>
                             </div>
 
                             <div className="clear"></div>

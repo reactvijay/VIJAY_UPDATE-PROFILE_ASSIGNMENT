@@ -12,12 +12,11 @@ class EditProfile extends Component {
         console.log(mockdata);
         this.state = { data: {}, isEditable: false };
     }
-    
+
     componentDidMount() {
-        // this.updateState(mockdata);
         axios.get('http://172.16.110.13:3000/users/getDetails?profileid=114406')
             .then((response) => {
-                if(response && response.data){
+                if (response && response.data) {
                     this.updateState(response.data.userDetails[0]);
                 }
             })
