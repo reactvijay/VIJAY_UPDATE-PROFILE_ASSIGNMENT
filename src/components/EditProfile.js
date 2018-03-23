@@ -10,17 +10,19 @@ class EditProfile extends Component {
     constructor(props) {
         super(props);
         console.log(mockdata);
-        this.state = { data: {}, isEditable: false };
+        this.state = { data: {}, isEditable: false, email: '' };
+        // this.updateEmail;
+
     }
 
     componentDidMount() {
         axios.get('http://172.16.110.13:3000/users/getDetails?profileid=114406')
             .then((response) => {
-                if (response && response.data) {
+                if (response && response.data) {  //null check
                     this.updateState(response.data.userDetails[0]);
                 }
             })
-            .catch((error) => {
+            .catch((error) => { //shows error whether service or ..
                 console.log(error);
             });
     }
@@ -34,10 +36,12 @@ class EditProfile extends Component {
             isEditable: true,
         });
     }
+
+
     saveHandler = () => {
         const email = 'vijay@gmail.com';
         axios.post('http://172.16.110.13:3000/users/edit-profile?profileid=116607', {
-            email: email,
+            email: this.state.email,
         })
             .then(function (response) {
                 console.log(response);
@@ -45,6 +49,9 @@ class EditProfile extends Component {
             .catch(function (error) {
                 console.log(error);
             });
+    }
+    updateEmail = (email) => {
+        console.log(email);
     }
     render() {
         return (
@@ -58,7 +65,7 @@ class EditProfile extends Component {
 
                                     <div className="model-properties">
                                         <AccountSummary accountSummaryInfo={this.state.data} />
-                                        <EmailPassword emailPasswordInfo={this.state.data} iseditable={this.state.isEditable} />
+                                        <EmailPassword emailPasswordInfo={this.state.data} iseditable={this.state.isEditable} updateemail={this.updateEmail} />
                                         <AccessInformation accessInfo={this.state.data} />
                                     </div>
                                 </form>
@@ -70,7 +77,7 @@ class EditProfile extends Component {
 
                 <button type="submit">Cancel</button>
 
-                <button type="submit" onClick={() => this.hideLabel()}>Edit</button>
+                <button type="submit" onClick={(updateEmail) => this.hideLabel()}>Edit</button>
 
             </div>
         );

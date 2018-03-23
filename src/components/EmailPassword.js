@@ -3,6 +3,16 @@ import { Link } from "react-router-dom";
 class EmailPassword extends Component {
   constructor(props) {
     super(props);
+    this.state = { email: '' };
+  }
+
+  setEmail = (event) => {  //definition
+    const { updateemail } = this.props;
+    updateemail(event.target.value);
+    this.setState({
+      email: event.target.value,
+    });
+
   }
 
   render() {
@@ -29,7 +39,7 @@ class EmailPassword extends Component {
               <div className="table-value login-value">
 
 
-                {iseditable ? <input type="email" defaultValue={emailPasswordInfo.email} /> : <span maxlength="128" id="login" name="login" className=" label-field input">{emailPasswordInfo.email}</span>}
+                {iseditable ? <input type="email" onChange={this.setEmail} defaultValue={emailPasswordInfo.email} /> : <span maxlength="128" id="login" name="login" className=" label-field input">{emailPasswordInfo.email}</span>}
 
 
               </div>

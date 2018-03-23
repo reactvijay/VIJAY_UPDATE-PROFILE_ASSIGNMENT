@@ -40,7 +40,7 @@ class AccessInformation extends Component {
 
               <div className="table-label forcechangepassword-label">
                 <label for="forcechangepassword" title="Require to change password on next log in">
-                  Require to change password on next log in          </label>
+                  Require to change password on next log in</label>
               </div>
               <div className="star">&nbsp;</div>
 
